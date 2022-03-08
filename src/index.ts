@@ -6,7 +6,7 @@ const app = express();
 // Middleware
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.set("Access-Control-Allow-Origin", "*");
-  res.set("Content-Type", "text/html")
+  res.set("Content-Type", "image/png")
   next();
 });
 
