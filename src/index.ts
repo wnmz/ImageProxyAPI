@@ -12,5 +12,5 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 app.get('/api/proxyImage', proxyImage);
 
 app.listen(process.env.PORT, () => {
-  console.log(`⚡️ [Server]: Running at https://localhost:${process.env.PORT}`);
+  console.log(`⚡️ [Server]: Running at http://localhost:${process.env.PORT}`);
 });
