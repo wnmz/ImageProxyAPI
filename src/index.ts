@@ -3,7 +3,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import { proxyImage } from './Controllers/proxyImage';
 const app = express();
 
-//middleware
+// Middleware
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.set("Access-Control-Allow-Origin", "*");
   next();

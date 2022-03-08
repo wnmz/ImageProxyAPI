@@ -9,8 +9,8 @@ export const proxyImage = (req: Request, res: Response) => {
     if (!url) return res.status(400).send('URL not specified!');
     if (w || h) {
         if (!Number(h) || !Number(w)) return res.status(400).send('h and w must be numbers');
-        return res.status(200).send(responseTemplate(encodeURI(url), w, h));
+        return res.status(200).send(responseTemplate(url, w, h));
     };
 
-    return res.status(200).send(responseTemplate(encodeURI(url)));
+    return res.status(200).send(responseTemplate(url));
 };
