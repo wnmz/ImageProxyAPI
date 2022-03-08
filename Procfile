@@ -1,1 +1,1 @@
-Worker: "npx tsc --build && node index.js"
+Worker: "npm start"

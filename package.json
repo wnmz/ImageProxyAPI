@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "build": "cd .. & npx tsc --build",
+    "start": "node build/index.js",
+    "build": "tsc",
+    "postinstall": "npm run build",
     "dev": "ts-node-dev --respawn --transpile-only --cls index.ts"
   },
   "author": "wnm",
