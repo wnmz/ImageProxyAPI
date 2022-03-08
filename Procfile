@@ -1,1 +1,1 @@
-Worker: "npx tsc --build && node index.js"
+Worker: "cd build/ && npm install && node index.js"
