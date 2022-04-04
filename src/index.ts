@@ -2,6 +2,7 @@ import 'dotenv/config';
 import express, { Request, Response, NextFunction } from 'express';
 import { proxyImage } from './Controllers/proxyImage';
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use((req: Request, res: Response, next: NextFunction) => {
@@ -10,8 +11,9 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
+// TODO: AntiSpam 
 app.get('/api/proxyImage', proxyImage);
 
-app.listen(process.env.PORT, () => {
-  console.log(`⚡️ [Server]: Running at http://localhost:${process.env.PORT}`);
+app.listen(port, () => {
+  console.log(`⚡️ [Server]: Running at http://localhost:${port}`);
 });

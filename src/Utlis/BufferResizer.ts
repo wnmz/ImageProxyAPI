@@ -5,8 +5,9 @@ export interface BufferResizerOptions {
     height: number;
 };
 
-const defaultOptions: BufferResizerOptions = { width: 700, height: 500 };
+const defaultOptions: BufferResizerOptions = { width: 400, height: 225 };
 
+// TODO: GIF SUPPORT
 export default async (buffer: Buffer, options: BufferResizerOptions = defaultOptions) => {
     const image = await Jimp.read(buffer);
 
@@ -16,6 +17,7 @@ export default async (buffer: Buffer, options: BufferResizerOptions = defaultOpt
     options.height = Math.trunc(
         image.bitmap.height * (options.width / image.bitmap.width)
     );
-
+    
+    //TODO: Fix mime
     return image.resize(options.width, options.height).getBufferAsync('image/png');
 };
